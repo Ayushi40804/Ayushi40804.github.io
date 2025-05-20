@@ -1,9 +1,8 @@
 import React from 'react';
-// REMOVE: import styles from './Footer.module.css';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="footer">
+    <footer className="py-6 bg-neutral-900 text-neutral-400 text-center text-sm">
       <p>&copy; {new Date().getFullYear()} Ayushi. All Rights Reserved.</p>
     </footer>
   );

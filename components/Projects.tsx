@@ -1,5 +1,4 @@
 import React from 'react';
-// REMOVE: import styles from './ProjectsSection.module.css';
 
 interface Project {
   title: string;
@@ -31,18 +30,24 @@ const ProjectsSection: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="projects-section">
-      <h2>Projects</h2>
-      <div className="projects-container">
+    <section id="projects" className="py-8 md:py-12 lg:py-16 bg-transparent">
+      <h2 className="text-3xl font-bold text-neutral-700 dark:text-white text-center mb-6">Projects</h2>
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         {projects.map((project, index) => (
-          <div key={index} className="project-card">
-            <h3>{project.title}</h3>
+          <div key={index} className="bg-white dark:bg-neutral-800 rounded-lg shadow-md p-6">
+            <h3 className="text-xl font-semibold text-neutral-800 dark:text-neutral-200 mb-2">{project.title}</h3>
             {project.position && (
-              <p className="position">Position: {project.position}</p>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-1">
+                Position: {project.position}
+              </p>
             )}
-            <p className="description">{project.description}</p>
-            {project.date && <p className="date">Date: {project.date}</p>}
-            {project.status && <p className="status">Status: {project.status}</p>}
+            <p className="text-neutral-700 dark:text-neutral-300 mb-2">{project.description}</p>
+            {project.date && (
+              <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-1">Date: {project.date}</p>
+            )}
+            {project.status && (
+              <p className="text-sm text-blue-500 dark:text-blue-300">Status: {project.status}</p>
+            )}
           </div>
         ))}
       </div>

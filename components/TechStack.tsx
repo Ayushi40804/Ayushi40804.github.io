@@ -1,6 +1,3 @@
-import React from 'react';
-// REMOVE: import styles from './SkillsSection.module.css';
-
 const SkillsSection: React.FC = () => {
   return (
     <section id="skills" className="skills-section">

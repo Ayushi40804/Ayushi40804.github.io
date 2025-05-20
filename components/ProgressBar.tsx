@@ -1,6 +1,5 @@
 'use client'; //  IMPORTANT: Add this line at the top
 import React, { useState, useEffect } from 'react';
-// REMOVE: import styles from './ProgressBar.module.css';
 
 const ScrollProgress: React.FC = () => {
   const [scrollPercentage, setScrollPercentage] = useState(0);
@@ -18,9 +17,9 @@ const ScrollProgress: React.FC = () => {
   }, []);
 
   return (
-    <div className="progress-bar-container">
+    <div className="fixed top-0 left-0 w-full h-1 bg-blue-500 z-30">
       <div
-        className="progress-bar"
+        className="h-1 bg-blue-300 transition-width duration-100"
         style={{ width: `${scrollPercentage}%` }}
       />
     </div>
