@@ -1,7 +1,5 @@
 import { OrbitingCircles } from "./ui/orbiting-circles";
-import { IconBrandAws, IconBrandBootstrap, IconBrandCpp, IconBrandCSharp, IconBrandCss3, IconBrandDebian, IconBrandDocker, IconBrandGatsby, IconBrandGit, IconBrandGithub, IconBrandGithubCopilot, IconBrandGitlab, IconBrandGolang, IconBrandHtml5, IconBrandJavascript, IconBrandMysql, IconBrandNextjs, IconBrandPython, IconBrandReact, IconBrandRedhat, IconBrandTailwind, IconBrandTypescript, IconBrandUbuntu, IconBrandUnity, IconBrandVercel, IconBrandVscode } from "@tabler/icons-react";
-import { FaJava, FaLinux } from "react-icons/fa";
-import { SiGnubash, SiHuggingface, SiPytorch, SiTensorflow } from "react-icons/si";
+import { IconBrandAws, IconBrandBootstrap, IconBrandDebian, IconBrandDocker, IconBrandGatsby, IconBrandGit, IconBrandGithub, IconBrandGitlab, IconBrandGolang, IconBrandJavascript, IconBrandMysql, IconBrandNextjs, IconBrandPython, IconBrandReact, IconBrandRedhat, IconBrandTailwind, IconBrandTypescript, IconBrandUbuntu, IconBrandVercel } from "@tabler/icons-react";
 import React from "react";
 
 export function TechStack() {
