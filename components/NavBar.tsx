@@ -1,13 +1,11 @@
-// D:\Ayushi40804.github.io\components\NavBar.tsx
 import React from "react";
-import { FloatingDock } from "./ui/floating-dock"; // Corrected import path
+import { FloatingDock } from "./ui/floating-dock"; 
 import {
   IconHome,
   IconUser,
   IconBriefcase,
   IconTrophy,
   IconMail,
-  // IconCertificate,
 } from "@tabler/icons-react";
 
 export function NavBar() {
@@ -15,7 +13,6 @@ export function NavBar() {
     {
       title: "Home",
       icon: (
-        // Changed icon color to even darker for both light and dark mode
         <IconHome className="h-full w-full text-black dark:text-white" />
       ),
       href: "#hero",
@@ -23,7 +20,6 @@ export function NavBar() {
     {
       title: "About Me",
       icon: (
-        // Changed icon color to even darker for both light and dark mode
         <IconUser className="h-full w-full text-black dark:text-white" />
       ),
       href: "#about-me",
@@ -31,7 +27,6 @@ export function NavBar() {
     {
       title: "Experience",
       icon: (
-        // Changed icon color to even darker for both light and dark mode
         <IconBriefcase className="h-full w-full text-black dark:text-white" />
       ),
       href: "#experience",
@@ -39,7 +34,6 @@ export function NavBar() {
     {
       title: "Achievements",
       icon: (
-        // Changed icon color to even darker for both light and dark mode
         <IconTrophy className="h-full w-full text-black dark:text-white" />
       ),
       href: "#achievements",
@@ -47,7 +41,6 @@ export function NavBar() {
     {
       title: "Contact",
       icon: (
-        // Changed icon color to even darker for both light and dark mode
         <IconMail className="h-full w-full text-black dark:text-white" />
       ),
       href: "#socials",

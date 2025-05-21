@@ -1,13 +1,13 @@
-import HeroSection from '../components/HeroSection';
-// import { AboutMe } from '../components/AboutMe';
-// import Projects from '../components/Projects';
-// import TechStack from '../components/TechStack';
-// import { Achievements } from '../components/Achievements';
+import { HeroSection } from '../components/HeroSection';
+import { AboutMe } from '../components/AboutMe';
+import Projects from '../components/Projects';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import ScrollProgress from '../components/ProgressBar';
-// import Socials from '../components/Socials';
-
+import { TechStack } from '../components/TechStack';
+import { Events } from '../components/Events';
+import { Certifications } from '../components/Certifications';
+import { Socials } from '../components/Socials';
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
       <div id="heroSection">
         <HeroSection />
       </div>
-      {/* <div id="aboutme">
+      <div id="aboutme">
         <AboutMe />
       </div>
       <div id="projects">
@@ -26,15 +26,18 @@ export default function Home() {
       <div id="TechStack">
         <TechStack />
       </div>
-      <div id="Achievements">
-        <Achievements />
+      <div id="Events">
+        <Events />
       </div>
-      <div id="socials">
+      <div id="Certifications">
+        <Certifications />
+      </div>
+      <div id="Socials">
         <Socials />
-      </div>*/
+      </div>
       <div id="footer">
         <Footer />
-      </div>}
+      </div>
     </div>
   );
 }

@@ -1,62 +1,67 @@
-import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa'; // Importing icons
-// You might need to install react-icons: npm install react-icons
+"use client";
 
-const SocialsSection: React.FC = () => {
-  const socialLinks = [
-    {
-      name: 'GitHub',
-      url: 'https://github.com/Ayushi40804',
-      icon: FaGithub,
-      description: 'Explore my coding projects.',
-    },
-    {
-      name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/ayushi40804/',
-      icon: FaLinkedin,
-      description: 'Connect with me professionally.',
-    },
-    {
-      name: 'Email',
-      url: 'mailto:ayushi40804@gmail.com',
-      icon: FaEnvelope,
-      description: 'Send me an email.',
-    },
-    {
-      name: 'Phone',
-      url: 'tel:9455626057',
-      icon: FaPhone,
-      description: 'Give me a call.',
-    },
-    // Add more social links as needed (e.g., Twitter, personal website)
-  ];
+import React from "react";
+import { LinkPreview } from "./ui/link-preview"; 
 
+const socialLinks = [
+  {
+    id: 'social-linkedin',
+    name: 'LinkedIn Profile',
+    description: 'Connect with me professionally.',
+    link: 'https://www.linkedin.com/in/Ayushi40804/',
+  },
+  {
+    id: 'social-github',
+    name: 'GitHub',
+    description: 'Check out my code repositories.',
+    link: 'https://github.com/Ayushi40804', 
+  },
+  {
+    id: 'social-instagram',
+    name: 'Instagram',
+    description: 'Follow my creative side.',
+    link: 'https://www.instagram.com/Ayushi40804/',
+  },
+  {
+    id: 'social-leetcode',
+    name: 'LeetCode',
+    description: 'My problem-solving journey.',
+    link: 'https://leetcode.com/Ayushi40804/',
+  },
+  {
+    id: 'social-hackerrank',
+    name: 'HackerRank',
+    description: 'Showcasing my coding challenges.',
+    link: 'https://www.hackerrank.com/profile/Ayushi40804',
+  },
+];
+
+export function Socials() {
   return (
-    <section id="socials" className="py-8 md:py-12 lg:py-16 bg-transparent text-neutral-700 dark:text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-neutral-700 dark:text-white text-center mb-12">Connect With Me</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          {socialLinks.map((link, index) => (
-            <a
-              key={index}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white dark:bg-neutral-800 rounded-lg shadow-md p-6 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-lg hover:scale-[1.02] border border-neutral-200 dark:border-neutral-700"
-            >
-              <link.icon className="text-4xl text-blue-600 dark:text-blue-400 mb-3" />
-              <h3 className="text-xl font-semibold text-neutral-800 dark:text-neutral-200 mb-1">
-                {link.name}
-              </h3>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                {link.description}
-              </p>
-            </a>
-          ))}
-        </div>
+    <section className="relative py-20" id="socials">
+      <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 bg-gradient-to-b from-black to-gray-300 bg-clip-text text-transparent dark:from-white dark:to-black">
+        Connect With Me
+      </h2>
+      <p className="max-w-2xl text-base md:text-xl text-center mx-auto mb-10 dark:text-neutral-200">
+        Find me across the web:
+      </p>
+
+      <div className="flex flex-wrap justify-center items-center gap-4 px-4 max-w-4xl mx-auto">
+        {socialLinks.map((social) => (
+          <LinkPreview
+            key={social.id}
+            url={social.link}
+            className="font-bold text-lg md:text-xl text-neutral-600 dark:text-neutral-300 hover:text-green-500 dark:hover:text-green-400 transition-colors duration-200"
+          >
+            {social.name}
+            {social.description && (
+              <span className="block text-sm font-normal text-neutral-500 dark:text-neutral-400">
+                {social.description}
+              </span>
+            )}
+          </LinkPreview>
+        ))}
       </div>
     </section>
   );
-};
-
-export default SocialsSection;
+}
