@@ -68,7 +68,7 @@ export function Certifications() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [active]);
 
-  useOutsideClick(ref, () => setActive(null));
+  useOutsideClick(ref as React.RefObject<HTMLDivElement>, () => setActive(null));
 
   return (
     <section className="relative py-20" id="certifications">
