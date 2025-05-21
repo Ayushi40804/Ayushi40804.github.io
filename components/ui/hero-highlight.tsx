@@ -12,8 +12,8 @@ export const HeroHighlight = ({
   className?: string;
   containerClassName?: string;
 }) => {
-  let mouseX = useMotionValue(0);
-  let mouseY = useMotionValue(0);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
   const dotPatterns = {
     light: {
@@ -32,7 +32,7 @@ export const HeroHighlight = ({
     clientY,
   }: React.MouseEvent<HTMLDivElement>) {
     if (!currentTarget) return;
-    let { left, top } = currentTarget.getBoundingClientRect();
+    const { left, top } = currentTarget.getBoundingClientRect();
 
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
@@ -101,7 +101,10 @@ export const HeroHighlight = ({
       <div className={cn("relative z-20", className)}>
         {React.Children.map(children, child => {
             if (React.isValidElement(child) && child.type === Highlight) {
-                return React.cloneElement(child, { mouseX, mouseY });
+                return React.cloneElement(
+                    child as React.ReactElement<React.ComponentProps<typeof Highlight>>,
+                    { mouseX, mouseY }
+                );
             }
             return child;
         })}
@@ -118,8 +121,8 @@ export const Highlight = ({
 }: {
   children: React.ReactNode;
   className?: string;
-  mouseX?: ReturnType<typeof useMotionValue>;
-  mouseY?: ReturnType<typeof useMotionValue>;
+  mouseX?: import("framer-motion").MotionValue<number>;
+  mouseY?: import("framer-motion").MotionValue<number>;
 }) => {
   const [rect, setRect] = React.useState<DOMRect | null>(null);
   const ref = React.useRef<HTMLSpanElement>(null);
