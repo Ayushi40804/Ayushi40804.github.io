@@ -12,24 +12,40 @@ module.exports = {
   theme: {
     extend: {
       keyframes: {
+        // Existing orbit keyframes (for OrbitingCircles)
         orbit: {
           "0%": {
-            // THIS IS THE CRUCIAL PART:
-            // 1. rotate(0deg) - initial rotation of the element container around its parent's center
-            // 2. translateY(calc(var(--radius) * -1)) - move the element container UPWARDS by the radius amount
-            // 3. rotate(0deg) - initial rotation of the element itself (to keep it upright)
             transform: "rotate(0deg) translateY(calc(var(--radius) * -1)) rotate(0deg)",
           },
           "100%": {
-            // 1. rotate(360deg) - full rotation of the element container around its parent's center
-            // 2. translateY(calc(var(--radius) * -1)) - keep it at the same radial distance
-            // 3. rotate(-360deg) - counter-rotate the element itself to keep the icon upright
             transform: "rotate(360deg) translateY(calc(var(--radius) * -1)) rotate(-360deg)",
           },
         },
+        // Aurora text keyframes
+        aurora: {
+          from: {
+            backgroundPosition: "50% 50%, 50% 50%",
+          },
+          to: {
+            backgroundPosition: "350% 50%, 350% 50%",
+          },
+        },
+        // --- ADD THESE KEYFRAMES FOR ANIMATED GRADIENT TEXT ---
+        gradient: {
+          to: {
+            backgroundPosition: "var(--bg-size) 0%",
+          },
+        },
+        // --- END ANIMATED GRADIENT TEXT KEYFRAMES ---
       },
       animation: {
+        // Existing orbit animation (for OrbitingCircles)
         orbit: "orbit var(--duration) linear infinite",
+        // Aurora text animation
+        aurora: "aurora 1.2s linear infinite",
+        // --- ADD THESE ANIMATIONS FOR ANIMATED GRADIENT TEXT ---
+        gradient: "gradient 8s linear infinite", // You can adjust the '8s' duration
+        // --- END ANIMATED GRADIENT TEXT ANIMATIONS ---
       },
       borderRadius: {
         lg: 'var(--radius)',

@@ -1,6 +1,6 @@
 import { HeroSection } from '../components/HeroSection';
 import { AboutMe } from '../components/AboutMe';
-import Projects from '../components/Projects';
+import { Projects } from '../components/Projects';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import ScrollProgress from '../components/ProgressBar';

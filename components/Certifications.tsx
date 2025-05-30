@@ -4,7 +4,7 @@ import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion"; 
 import Image from 'next/image'; 
 import { useOutsideClick } from "../hooks/use-outside-click";
-import { portfolioItems } from '../data/portfoliodata'; 
+import { portfolioItems } from './../data/portfoliodata'; 
 
 interface CertificationItem {
   id: string;
