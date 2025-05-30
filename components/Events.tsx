@@ -1,121 +1,78 @@
 "use client";
-import { ParallaxScroll } from './ui/parallax-scroll';
+import React from 'react';
+import { Timeline } from './ui/timeline';
 
 const allMyEventsData = [
-    {
-      id: 'event-tech-summit-2023',
-      title: 'Global Tech Summit',
-      description: 'Attended keynotes on AI ethics, quantum computing, and sustainable tech.',
-      date: 'Dec 15-17, 2023',
-      type: 'event',
-      eventRole: 'Participant',
-      location: 'Virtual Event',
-      link: 'https://globaltechsummit.org/2023',
-      thumbnail: '/images/IMG_4106.jpg',
-    },
-    {
-      id: 'event-dev-meetup',
-      title: 'Web Dev Community Meetup',
-      description: 'Presented a lightning talk on "State Management with Zustand in React".',
-      date: 'Jan 20, 2024',
-      type: 'event',
-      eventRole: 'Speaker',
-      location: 'Community Hall, Delhi',
-      link: 'https://your-blog.com/zustand-talk',
-      thumbnail: '/images/IMG_4108.jpg',
-    },
-    {
-      id: 'event-ai-conf',
-      title: 'AI & Data Science Conf.',
-      description: 'Explored latest trends in generative AI and big data analytics.',
-      date: 'April 5-6, 2024',
-      type: 'event',
-      eventRole: 'Participant',
-      location: 'Bengaluru, India',
-      link: 'https://www.aiconference.org/',
-      thumbnail: '/images/IMG_4401.jpg',
-    },
-    {
-      id: 'event-code-clinic',
-      title: 'Open Source Code Clinic',
-      description: 'Mentored newcomers in contributing to open source projects.',
-      date: 'Feb 10, 2024',
-      type: 'event',
-      eventRole: 'Mentor',
-      location: 'Online',
-      link: 'https://github.com/events/oss-clinic',
-      thumbnail: '/images/IMG_4439.jpg',
-    },
-    {
-      id: 'event-ux-design',
-      title: 'UX Design Workshop',
-      description: 'Hands-on session on user research and prototyping.',
-      date: 'March 2, 2024',
-      type: 'event',
-      eventRole: 'Participant',
-      location: 'Design Studio, Mumbai',
-      link: 'https://www.uxworkshop.com/',
-      thumbnail: '/images/IMG_4490.jpg',
-    },
-    {
-      id: 'event-nextjs-conf',
-      title: 'Next.js Conf 2024',
-      description: 'Attended keynotes and workshops on the latest Next.js features.',
-      date: 'April 20, 2024',
-      type: 'event',
-      eventRole: 'Participant',
-      location: 'Online',
-      link: 'https://nextjs.org/conf',
-      thumbnail: '/images/IMG_4101.jpg',
-    },
-    {
-      id: 'event-local-hack-day',
-      title: 'Local Hack Day',
-      description: 'Participated in a 24-hour coding sprint, building a small web app.',
-      date: 'May 5, 2024',
-      type: 'event',
-      eventRole: 'Participant',
-      location: 'Local Community Hub',
-      link: '#',
-      thumbnail: '/images/IMG_4102.jpg',
-    },
-    {
-      id: 'event-design-sprint',
-      title: 'Product Design Sprint',
-      description: 'Collaborated on a rapid prototyping session for a new product feature.',
-      date: 'June 1, 2024',
-      type: 'event',
-      eventRole: 'Team Member',
-      location: 'Innovation Lab',
-      link: '#',
-      thumbnail: '/images/IMG_4103.jpg',
-    },
-    {
-      id: 'event-cybersecurity-webinar',
-      title: 'Cybersecurity Best Practices Webinar',
-      description: 'Learned about modern threats and defense strategies in cybersecurity.',
-      date: 'May 15, 2024',
-      type: 'event',
-      eventRole: 'Participant',
-      location: 'Online',
-      link: '#',
-      thumbnail: '/images/IMG_4104.jpg',
-    },
+  {
+    id: 'CTF-EVENT',
+    title: 'DEFCON Capture The Flag',
+    description: 'Attended keynotes on AI ethics, quantum computing, and sustainable tech.',
+    date: '31 March, 2024',
+    type: 'event',
+    eventRole: 'Keynote Speaker',
+    location: 'Audotorium, Campus-17, KIIT, Bhubaneswar',
+    images: ['/images/IMG_4108.jpg', '/images/IMG_4401.jpg', '/images/IMG_4439.jpg', '/images/IMG_4490.jpg'],
+    attendees: '2000+'
+  },
+  {
+    id: 'Project Wing 2025',
+    title: 'Project Wing 2025',
+    description: 'Presented a lightning talk on "State Management with Zustand in React".',
+    date: '12 Jan 2025',
+    type: 'Orientation',
+    eventRole: 'keynote speaker',
+    location: 'Auditorium, Central Library, KIIT, Bhubaneswar',
+    images: ['/images/IMG_4101.jpg', '/images/IMG_4102.jpg', '/images/IMG_4103.jpg'],
+    attendees: '1500+'
+  },
+
 ];
 
 export function Events() {
-  const eventImages = allMyEventsData.map(item => item.thumbnail);
+  const timelineEvents = allMyEventsData.map(event => ({
+    title: event.title,
+    content: (
+      <div className="text-neutral-700 dark:text-neutral-300">
+        <p className="mb-2">
+          <span className="font-semibold">Date:</span> {event.date}
+        </p>
+        <p className="mb-2">
+          <span className="font-semibold">Role:</span> {event.eventRole}
+        </p>
+        <p className="mb-2">
+          <span className="font-semibold">Location:</span> {event.location}
+        </p>
+        <p className="mb-2"> {/* Added attendee info */}
+          <span className="font-semibold">Attendees:</span> {event.attendees || 'N/A'}
+        </p>
+        <p className="mb-4">{event.description}</p>
+
+
+        {event.images && event.images.length > 0 && (
+          <div className="flex flex-wrap gap-4 mt-4">
+            {event.images.map((imageSrc, imgIndex) => (
+              <img
+                key={`${event.id}-img-${imgIndex}`}
+                src={imageSrc}
+                alt={`${event.title} image ${imgIndex + 1}`}
+                className="rounded-md object-cover max-w-full h-48 sm:h-auto sm:max-w-xs"
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    ),
+  }));
 
   return (
     <section className="relative py-20">
       <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 bg-gradient-to-b from-black to-gray-300 bg-clip-text text-transparent dark:from-white dark:to-black">
-        Event Highlights
+        My Journey & Events
       </h2>
-      <p className="max-w-2xl text-base md:text-xl text-center mx-auto mb-10 dark:text-neutral-200">
-        Here are some of the notable events I&#39;ve participated in or spoken at.
+      <p className="text-center text-lg md:text-xl mb-12 text-gray-600 dark:text-gray-400">
+        Explore my journey through key events, talks, and milestones.
       </p>
-
-      <ParallaxScroll images={eventImages} className="w-full" />
+      <Timeline data={timelineEvents} />
     </section>
   );
 }
