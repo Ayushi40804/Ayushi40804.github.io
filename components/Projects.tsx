@@ -42,8 +42,7 @@ const projectsDataWithVideos: ProjectData[] = [
       "Strategies for real-time data ingestion and context management",
       "Building interactive web interfaces for AI applications",
     ],
-    githubLink: "https://github.com/Ayushi40804/hackocalypsebot",
-    liveDemoLink: "https://hackocalypse-demo.vercel.app",
+    githubLink: "https://github.com/Ayushi40804/hackocalypsebot/tree/ayushi",
   },
   {
     category: "Cybersecurity (Vulnerability Scanning Tool)",
@@ -67,7 +66,7 @@ const projectsDataWithVideos: ProjectData[] = [
       "Improved error handling and logging practices",
       "Techniques for asynchronous request handling",
     ],
-    githubLink: "https://github.com/ayushi40804",
+    githubLink: "https://github.com/MLSAKIIT/Arachnet",
   },
   {
     category: "Web Development (Proxy Server)",
@@ -91,7 +90,7 @@ const projectsDataWithVideos: ProjectData[] = [
       "Understanding of proxy protocols and HTTP/HTTPS intricacies",
       "GUI development best practices",
     ],
-    githubLink: "https://github.com/ayushi40804",
+    githubLink: "https://github.com/MLSAKIIT/CRISP",
   },
   {
     category: "AI/ML & Security",
